@@ -342,10 +342,8 @@ def run_quiz(quiz_questions):
 
 #      print(f"\n Your final Score for the quiz is: {score}/10")
 
-
 # Note: if for 9, 10 = excellent, 6to8 good job else sorry nexxt time
 # do the review, show the letter and the word(pseuocode showed only letter)
-
 
 
 print("Welcome to my quiz!")
