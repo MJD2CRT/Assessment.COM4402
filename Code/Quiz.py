@@ -1,8 +1,4 @@
-# STUDENT NUMBER: 2420980
-# STUDENT NAME: Modupe John Dairo
-# MODULE CODE: COM4402
-# MODULE TITLE: Programming
-
+# NAME: Modupe John Dairo
 
 def initialise_question_bank():
     question_bank = {}
