@@ -330,7 +330,21 @@ def run_quiz(quiz_questions):
 
 
 #####MARK AND DISPLAY RESULT RIGHT HERE
+#def mark_and_display_results(quiz_questions, user_answers):
+#    score = 0
+#    i = 0
 
+#    while 1 < 10:
+#        correct = quiz_questions[i]["correct_letter"]
+#        if user_answers[i] == correct:
+#            score += 1
+#        i += 1
+
+#      print(f"\n Your final Score for the quiz is: {score}/10")
+
+
+# Note: if for 9, 10 = excellent, 6to8 good job else sorry nexxt time
+# do the review, show the letter and the word(pseuocode showed only letter)
 
 
 
