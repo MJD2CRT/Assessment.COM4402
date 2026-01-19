@@ -1,0 +1,321 @@
+STUDENT NUMBER: 2420980
+STUDENT NAME:   Modupe John Dairo
+MODULE CODE:    COM4402
+MODULE TITLE:   Programming
+ASSIGNMENT:     Quiz Program Pseudocode (15% of module grade)
+
+BEGIN PROGRAM
+
+OUTPUT welcome message and rules
+OUTPUT "You will have to answer 10 questions."
+OUTPUT "You will NOT be told the correct answer until the end of the quiz."
+OUTPUT "Enter A, B, C, or D for each question."
+
+CALL InitialiseQuestionBank
+STORE returned value in question_bank
+
+REPEAT
+    OUTPUT "Choose a topic:"
+    OUTPUT "1. History"
+    OUTPUT "2. General Knowledge"
+    OUTPUT "3. Coding"
+    OUTPUT "4. Bible"
+    INPUT topic_choice
+
+    IF topic_choice == 1 THEN
+        selected_topic = "History"
+        valid_topic = TRUE
+    ELSE IF topic_choice == 2 THEN
+        selected_topic = "General Knowledge"
+        valid_topic = TRUE
+    ELSE IF topic_choice == 3 THEN
+        selected_topic = "Coding"
+        valid_topic = TRUE
+    ELSE IF topic_choice == 4 THEN
+        selected_topic = "Bible"
+        valid_topic = TRUE
+    ELSE
+        OUTPUT "Invalid choice, re-enter your choice"
+        valid_topic = FALSE
+    END IF
+UNTIL valid_topic == TRUE
+
+CALL BuildTopicQuiz USING question_bank AND selected_topic
+STORE returned value in quiz_questions
+
+CALL RunQuiz USING quiz_questions
+STORE returned value in user_answers
+
+CALL MarkAndDisplayResults USING quiz_questions AND user_answers
+
+OUTPUT "Do you want to play again? (Y/N)"
+Input play_again
+Convert play_again to uppercase
+
+WHILE play_again is not "Y" AND play_again is not "N" DO
+    OUTPUT "Invalid input. Enter Y or N."
+    Input play_again
+    Convert play_again to uppercase
+END WHILE
+
+IF play_again == "Y" THEN
+    GO TO Topic selection step
+ELSE
+    OUTPUT "Thanks for playing!"
+END IF
+
+END PROGRAM
+
+
+
+SUBROUTINE InitialiseQuestionBank
+    Create question_bank data structure (dictionary)
+
+    // History (10 questions)
+    question_bank["History"] = [
+        { question_text:"Which year did World War 2 end?",
+          options:{A:"2000", B:"1944", C:"1945", D:"1950"},
+          correct_letter:"C" },
+
+        { question_text:"Who was the first President of the United States?",
+          options:{A:"John Dairo", B:"George Washington", C:"Charles Barbage", D:"John Adams"},
+          correct_letter:"B" },
+
+        { question_text:"The ancient Egyptian writing system is called:",
+          options:{A:"Habaacus", B:"Hieroglyphics", C:"Latin", D:"yoruba"},
+          correct_letter:"B" },
+
+        { question_text:"The Roman Empire was centered around which modern day country?",
+          options:{A:"France", B:"Italy", C:"Greece", D:"Spain"},
+          correct_letter:"B" },
+
+        { question_text:"The Industrial Revolution began in which country?",
+          options:{A:"Germany", B:"Nigeria", C:"United States", D:"Great Britain"},
+          correct_letter:"D" },
+
+        { question_text:"The “Black Death” was primarily what type of disease?",
+          options:{A:"Corona virus", B:"Bubonic plague", C:"Ebola", D:"Influenza"},
+          correct_letter:"B" },
+
+        { question_text:"The Great Wall is most associated with which country?",
+          options:{A:"China", B:"India", C:"Mongolia", D:"Russia"},
+          correct_letter:"A" },
+
+        { question_text:"Who was famously known as the “Maid of Orléans”?",
+          options:{A:"Marie Antoinette", B:"Queen Elizabeth", C:"Joan of Arc", D:"Catherine the Great"},
+          correct_letter:"C" },
+
+        { question_text:"The Cold War was mainly between the USA and:",
+          options:{A:"Germany", B:"China", C:"Japan", D:"Soviet Union"},
+          correct_letter:"D" },
+
+        { question_text:"Which event is often associated with the start of World War I?",
+          options:{A:"Titanic sinking", B:"Assassination of Archduke Franz Ferdinand", C:"The Boston Tea Party", D:"The fall of the Berlin Wall"},
+          correct_letter:"B" }
+    ]
+
+    //General Knowledge (10 questions)
+    question_bank["General Knowledge"] = [
+        { question_text:"What is the capital of France?",
+          options:{A:"Rome", B:"Madrid", C:"Paris", D:"Berlin"},
+          correct_letter:"C" },
+
+        { question_text:"How many continents are there on Earth?",
+          options:{A:"10", B:"6", C:"7", D:"8"},
+          correct_letter:"C" },
+
+        { question_text:"Water freezes at what temperature in Celsius?",
+          options:{A:"0°C", B:"10°C", C:"32°C", D:"100°C"},
+          correct_letter:"A" },
+
+        { question_text:"Which planet is known as the Red Planet?",
+          options:{A:"Venus", B:"Mars", C:"Jupiter", D:"Saturn"},
+          correct_letter:"B" },
+
+        { question_text:"Which ocean is the largest?",
+          options:{A:"Atlantic", B:"Indian", C:"Arctic", D:"Pacific"},
+          correct_letter:"D" },
+
+        { question_text:"What is the chemical symbol for gold?",
+          options:{A:"Ag", B:"Au", C:"Gd", D:"Go"},
+          correct_letter:"B" },
+
+        { question_text:"How many days are in a leap year?",
+          options:{A:"322", B:"365", C:"366", D:"367"},
+          correct_letter:"C" },
+
+        { question_text:"Which animal is the largest mammal?",
+          options:{A:"African elephant", B:"Blue whale", C:"Rhino", D:"Great white shark"},
+          correct_letter:"B" },
+
+        { question_text:"What is the primary language spoken in Brazil?",
+          options:{A:"Yoruba", B:"Portuguese", C:"French", D:"English"},
+          correct_letter:"B" },
+
+        { question_text:"Which instrument has 88 keys (typically)?",
+          options:{A:"Guitar", B:"Violin", C:"Piano", D:"Flute"},
+          correct_letter:"C" }
+    ]
+
+    //Coding (10 questions)
+    question_bank["Coding"] = [
+        { question_text:"In most programming languages, what does a variable do?",
+          options:{A:"Stores data values", B:"Prints text automatically", C:"Deletes files", D:"Turns code into hardware"},
+          correct_letter:"A" },
+
+        { question_text:"Which of these is an example of a loop?",
+          options:{A:"IF statement", B:"FOR loop", C:"Comment line", D:"Constant"},
+          correct_letter:"B" },
+
+        { question_text:"Which symbol is commonly used for “not equal to” in many languages?",
+          options:{A:"==", B:"!=", C:"=.", D:":="},
+          correct_letter:"B" },
+
+        { question_text:"What does “HTTP” stand for?",
+          options:{A:"HyperText Transfer Protocol", B:"HighText Transfer Program", C:"HyperTool Text Process", D:"Hyper Transfer Text Package"},
+          correct_letter:"A" },
+
+        { question_text:"Which data type is best for storing True/False values?",
+          options:{A:"Integer", B:"String", C:"Boolean", D:"Float"},
+          correct_letter:"C" },
+
+        { question_text:"What is the purpose of an “if” statement?",
+          options:{A:"Repeat code forever", B:"Make decisions based on a condition", C:"Store a list of items", D:"Draw a flowchart"},
+          correct_letter:"B" },
+
+        { question_text:"In Python, which keyword is used to define a function?",
+          options:{A:"func", B:"define", C:"def", D:"function"},
+          correct_letter:"C" },
+
+        { question_text:"What does “IDE” stand for?",
+          options:{A:"Integrated Development Environment", B:"Internal Data Engine", C:"Integrated Design Editor", D:"Internet Development Extension"},
+          correct_letter:"A" },
+
+        { question_text:"Which of these is a valid example of a comment in many languages like C#, Java, JavaScript?",
+          options:{A:"-- comment", B:"// comment", C:"** comment **", D:"\\\\ comment"},
+          correct_letter:"B" },
+
+        { question_text:"What is debugging?",
+          options:{A:"Writing code faster", B:"Removing errors from a program", C:"Encrypting data", D:"Compressing files"},
+          correct_letter:"B" }
+    ]
+
+    //Bible (10 questions)
+    question_bank["Bible"] = [
+        { question_text:"Who built the ark?",
+          options:{A:"Moses", B:"Noah", C:"David", D:"Abraham"},
+          correct_letter:"B" },
+
+        { question_text:"Jesus was born in which town?",
+          options:{A:"Nazareth", B:"Jerusalem", C:"Bethlehem", D:"Jericho"},
+          correct_letter:"C" },
+
+        { question_text:"How many days and nights did it rain during the flood (Genesis)?",
+          options:{A:"7", B:"20", C:"40", D:"100"},
+          correct_letter:"C" },
+
+        { question_text:"Who led the Israelites out of Egypt?",
+          options:{A:"Joshua", B:"Moses", C:"Solomon", D:"Isaiah"},
+          correct_letter:"B" },
+
+        { question_text:"What is the first book of the Bible?",
+          options:{A:"Exodus", B:"Psalms", C:"Matthew", D:"Genesis"},
+          correct_letter:"D" },
+
+        { question_text:"Who was swallowed by a great fish?",
+          options:{A:"Jonah", B:"Peter", C:"Paul", D:"Elijah"},
+          correct_letter:"A" },
+
+        { question_text:"Which disciple betrayed Jesus?",
+          options:{A:"John", B:"Judas Iscariot", C:"Andrew", D:"Thomas"},
+          correct_letter:"B" },
+
+        { question_text:"The Ten Commandments were given on which mountain?",
+          options:{A:"Mount Carmel", B:"Mount Sinai", C:"Mount Olive", D:"Mount Ararat"},
+          correct_letter:"B" },
+
+        { question_text:"Who defeated Goliath?",
+          options:{A:"Saul", B:"Samson", C:"David", D:"Solomon"},
+          correct_letter:"C" },
+
+        { question_text:"The Lord’s Prayer is found in which part of the Bible?",
+          options:{A:"The Gospels", B:"Proverbs", C:"Revelation", D:"Genesis"},
+          correct_letter:"A" }
+    ]
+
+    RETURN question_bank
+END SUBROUTINE
+
+
+
+SUBROUTINE BuildTopicQuiz(question_bank, selected_topic)
+    Get selected_topic questions from question_bank
+    Set quiz_questions = 10 questions for selected_topic
+    RETURN quiz_questions
+END SUBROUTINE
+
+
+
+SUBROUTINE RunQuiz(quiz_questions)
+    Set user_answers = empty list
+    Set question_number = 1
+
+    WHILE question_number ≤ 10 DO
+        OUTPUT "Question " + question_number
+        OUTPUT quiz_questions[question_number].question_text
+        OUTPUT "A) " + quiz_questions[question_number].options.A
+        OUTPUT "B) " + quiz_questions[question_number].options.B
+        OUTPUT "C) " + quiz_questions[question_number].options.C
+        OUTPUT "D) " + quiz_questions[question_number].options.D
+
+        REPEAT
+            Input answer
+            Convert answer to uppercase
+
+            IF answer is "A" OR "B" OR "C" OR "D" THEN
+                valid_answer = TRUE
+            ELSE
+                OUTPUT "Invalid input,answer again"
+                valid_answer = FALSE
+            END IF
+        UNTIL valid_answer == TRUE
+
+        Store answer into user_answers
+        question_number = question_number + 1
+    END WHILE
+
+    RETURN user_answers
+END SUBROUTINE
+
+
+
+SUBROUTINE MarkAndDisplayResults(quiz_questions, user_answers)
+    Set score = 0
+    Set i = 1
+
+    WHILE i ≤ 10 DO
+        correct = quiz_questions[i].correct_letter
+
+        IF user_answers[i] == correct THEN
+            score = score + 1
+        END IF
+
+        i = i + 1
+    END WHILE
+
+    OUTPUT "Your final Score is: " + score + "/10"
+
+    IF score ≥ 9 THEN
+        OUTPUT "Excellent!!"
+    ELSE IF score ≥ 6 THEN
+        OUTPUT "Good job!"
+    ELSE
+        OUTPUT "Maybe next time:("
+    END IF
+
+    OUTPUT "Answer Review after quiz:"
+
+    FOR i FROM 1 TO 10 DO
+        OUTPUT "Q" + i + ": " + quiz_questions[i].question_text
+        OUTPUT "Your answer: " + user_answers[i]
+        OUTPUT "Correct answer: " + quiz_questions[i].correct_letter
