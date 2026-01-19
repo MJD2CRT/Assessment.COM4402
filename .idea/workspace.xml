@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61cc2b71-ca54-4f0d-9640-6bdbec908508" name="Changes" comment="Quiz&#10;#review not here yet">
-      <change beforePath="$PROJECT_DIR$/.idea/Assessment.code.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Assessment.code.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="61cc2b71-ca54-4f0d-9640-6bdbec908508" name="Changes" comment="Quiz&#10;#notes for review">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Quiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Quiz.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +100,23 @@
       <option name="project" value="LOCAL" />
       <updated>1768813132491</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Quiz&#10;#review not here yet">
+      <option name="closed" value="true" />
+      <created>1768822576259</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1768822576259</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Quiz&#10;#notes for review">
+      <option name="closed" value="true" />
+      <created>1768828757786</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1768828757786</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,6 +137,7 @@
     <MESSAGE value="Set up" />
     <MESSAGE value="Quiz" />
     <MESSAGE value="Quiz&#10;#review not here yet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Quiz&#10;#review not here yet" />
+    <MESSAGE value="Quiz&#10;#notes for review" />
+    <option name="LAST_COMMIT_MESSAGE" value="Quiz&#10;#notes for review" />
   </component>
 </project>
