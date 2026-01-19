@@ -372,7 +372,7 @@ while not valid_topic:
 
 quiz_questions = build_topic_quiz(question_bank, selected_topic)
 user_answers = run_quiz(quiz_questions)
-mark_and_display_results(quiz_questions, user_answers)
+#mark_and_display_results(quiz_questions, user_answers)
 
 play_again = input("Do you want to play again? (Y/N): ").upper()
 while play_again != "Y" and play_again != "N":
