@@ -1,0 +1,33 @@
+Student Name: Modupe John Dairo
+Student Number: 2420980
+Module Code: COM4402
+Module Title: Programming
+
+
+This program is a multiple-choice quiz application developed in Python for. The application
+allows a user to select a quiz topic, answer ten questions, receive a final score, and review
+both their answers and the correct answers at the end of the quiz.
+
+Four quiz topics:
+History
+General Knowledge
+Coding
+Bible
+
+Each topic contains 10 multiple-choice questions and menu-based topic selection
+After the quiz it automatically calculates your score
+
+HOW THE PROGRAM WORKS
+- The program displays a welcome message and quiz instructions.
+- You select one of the four topics.
+- Ten questions are displayed one at a time.
+- The user enters an answer (A, B, C, or D) for each question.
+-If the user enters an invalid input you have to try again.
+
+After all questions are answered:
+- The final score is displayed
+- Feedback is then given based on the score you got
+- A full answer review is shown after the feedback showing the correct answers
+
+
+

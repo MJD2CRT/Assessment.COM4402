@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61cc2b71-ca54-4f0d-9640-6bdbec908508" name="Changes" comment="integrated lecturers advice">
-      <change beforePath="$PROJECT_DIR$/.idea/Assessment.code.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Assessment.code.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
     </list>
@@ -119,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769092438950</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="integrated lecturers advice">
+      <option name="closed" value="true" />
+      <created>1769095856722</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1769095856722</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
